@@ -1,0 +1,20 @@
+{
+  "name": "instanthangouts",
+  "version": "0.1.0",
+  "description": "Instantly add Google+ Hangouts to any page.",
+  "main": "instanthangouts.js",
+  "author": "John Cox (johncox@google.com)",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "express": "~3.4.8",
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1.11",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-wrap": "~0.3.0",
+    "karma": "~0.10.9",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.1.5"
+  }
+}
