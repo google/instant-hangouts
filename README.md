@@ -194,7 +194,11 @@ When developing, run
     $ grunt
 
 to watch your local files and recreate the computed files automatically every
-time there is a change.
+time there is a change. This assumes you have installed `grunt-cli` globally,
+which is fairly common. If you want to use the local version managed by Instant
+Hangouts, instead run
+
+    $ ./node_modules/grunt-cli/bin/grunt
 
 We use [Karma](http://karma-runner.github.io/0.10/index.html) for our test
 runner. To start:
