@@ -166,16 +166,6 @@ Pull down the repo and install dependencies into `./node_modules` with
     $ git pull <repo>
     $ npm install
 
-You can start up a development server with
-
-    $ node scripts/server.js
-
-which runs on http://localhost:8080. If possible, use your hostname rather than
-localhost during development because the URL is used when constructing rooms. If
-you use a hostname, you can bring up the test server on multiple machines and
-log in with multiple accounts to do a real end-to-end test of the Hangout
-functionality.
-
 We use [Grunt](http://gruntjs.com/) to produce two files:
 
     instanthangouts-<version>.uncompiled.js
@@ -193,10 +183,11 @@ When developing, run
 
     $ grunt
 
-to watch your local files and recreate the computed files automatically every
-time there is a change. This assumes you have installed `grunt-cli` globally,
-which is fairly common. If you want to use the local version managed by Instant
-Hangouts, instead run
+which starts up a development server on `http://0.0.0.0:8080` and watch your
+local files and recreate the computed files automatically every time there is a
+change. This assumes you have installed `grunt-cli` globally, which is fairly
+common. If you want to use the local version managed by Instant Hangouts,
+instead run
 
     $ ./node_modules/grunt-cli/bin/grunt
 
