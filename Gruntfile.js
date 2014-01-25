@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         dest: 'instanthangouts-<%= pkg.version %>.uncompiled.js',
         options: {
           indent: '  ',
-          wrapper: ['(function () {\n', '}());\n']
+          wrapper: ['(function (window, document, undefined) {\n', '})(window, document);\n']
         }
       }
     }
