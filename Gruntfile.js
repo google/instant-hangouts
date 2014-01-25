@@ -31,5 +31,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-wrap');
 
-  grunt.registerTask('default', ['uglify', 'watch', 'wrap']);
+  grunt.registerTask('default', ['uglify', 'wrap', 'watch']);
 }
