@@ -2,8 +2,10 @@
 
 Instant Hangouts lets you easily add Google+ Hangouts to any web page:
 
-    <script src='instanthangouts.0.1.0.js' async></script>
-    <div class='instanthangouts'></div>
+```html
+<script src='instanthangouts.0.1.0.js' async></script>
+<div class='instanthangouts'></div>
+```
 
 which gives you:
 
@@ -24,15 +26,19 @@ rather than just a button to start a new Hangout.
 You serve `instanthangouts.0.1.0.js`. Then, you put the following HTML into your
 page where you want the Hangout to appear:
 
-    <script src='instanthangouts.0.1.0.js' async></script>
-    <div class='instanthangouts'></div>
+```html
+<script src='instanthangouts.0.1.0.js' async></script>
+<div class='instanthangouts'></div>
+```
 
 If you want more than one Hangout on your page, add additional `<div>`s. You
 only need our script once:
 
-    <script src='instanthangouts.0.1.0.js' async></script>
-    <div class='instanthangouts'></div>
-    <div class='instanthangouts'></div>
+```html
+<script src='instanthangouts.0.1.0.js' async></script>
+<div class='instanthangouts'></div>
+<div class='instanthangouts'></div>
+```
 
 Our script inserts a `<script>` tag that loads the Google+ Hangout Button API.
 We take care of loading the script asynchronously if possible so your pages
@@ -61,7 +67,9 @@ Widget mode looks like this:
 It is used by default, and can be explicitly selected by setting `render` to
 `hangout` in your HTML:
 
-    <div class='instanthangouts' render='hangout'></div>
+```html
+<div class='instanthangouts' render='hangout'></div>
+```
 
 In widget mode, you automatically get room support. Users who join the same room
 end up in the same Hangout. Rooms are unique to the 3- tuple `(publisher_id,
@@ -77,7 +85,9 @@ Button mode looks like this:
 
 It can be selected with the following HTML:
 
-    <div class='instanthangouts' render='createhangout'></div>
+```html
+<div class='instanthangouts' render='createhangout'></div>
+```
 
 This is the default mode in the Google+ Hangout API. It has no room support, but
 allows some options (like creating a Hangout on Air) that the widget does not
@@ -131,26 +141,30 @@ Default is `300`.
 Here is a full example for the HTML you need in widget mode to set all custom
 options:
 
-    <script src='instanthangouts-0.1.0.js' async></script>
-    <div
-        class='instanthangouts'
-        lang='fr'
-        parsetags='onload'
-        publisher_id='112744459749475398119'
-        render='hangout'
-        room_id='my_room'
-        topic='My Topic'
-        width='200'></div>
+```html
+<script src='instanthangouts-0.1.0.js' async></script>
+<div
+    class='instanthangouts'
+    lang='fr'
+    parsetags='onload'
+    publisher_id='112744459749475398119'
+    render='hangout'
+    room_id='my_room'
+    topic='My Topic'
+    width='200'></div>
+```
 
 And here is an example of all supported custom fields in button mode:
 
-    <script src='instanthangouts-0.1.0.js' async></script>
-    <div
-        class='instanthangouts'
-        lang='es'
-        parsetags='explicit'
-        render='createhangout'
-        widget_size='75'></div>
+```html
+<script src='instanthangouts-0.1.0.js' async></script>
+<div
+    class='instanthangouts'
+    lang='es'
+    parsetags='explicit'
+    render='createhangout'
+    widget_size='75'></div>
+```
 
 ## Development
 
@@ -163,12 +177,16 @@ which comes with npm, in whatever way is best on your system.
 
 Pull down the repo and install dependencies into `./node_modules` with
 
-    $ git pull <repo>
-    $ npm install
+```sh
+$ git pull <repo>
+$ npm install
+```
 
 You can start up a development server with
 
-    $ node scripts/server.js
+```sh
+$ node scripts/server.js
+```
 
 which runs on http://localhost:8080. If possible, use your hostname rather than
 localhost during development because the URL is used when constructing rooms. If
@@ -178,8 +196,10 @@ functionality.
 
 We use [Grunt](http://gruntjs.com/) to produce two files:
 
-    instanthangouts-<version>.uncompiled.js
-    instanthangouts-<version>.js
+```
+instanthangouts-<version>.uncompiled.js
+instanthangouts-<version>.js
+```
 
 `<version>` is set in `package.json`. The first file is the source concatenated
 and wrapped in a closure. The second is a minified version that users embed in
@@ -191,19 +211,25 @@ tags in this document.
 
 When developing, run
 
-    $ grunt
+```sh
+$ grunt
+```
 
 to watch your local files and recreate the computed files automatically every
 time there is a change. This assumes you have installed `grunt-cli` globally,
 which is fairly common. If you want to use the local version managed by Instant
 Hangouts, instead run
 
-    $ ./node_modules/grunt-cli/bin/grunt
+```sh
+$ ./node_modules/grunt-cli/bin/grunt
+```
 
 We use [Karma](http://karma-runner.github.io/0.10/index.html) for our test
 runner. To start:
 
-    $ karma start
+```sh
+$ karma start
+```
 
 This will bring up a Chrome window and attach Karma to it. Your test code will
 be run in that Chrome window. Karma has its own file watcher and reruns tests
