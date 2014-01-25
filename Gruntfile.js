@@ -4,6 +4,14 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    connect: {
+      server: {
+        options: {
+          hostname: 'localhost',
+          port: 8080
+        }
+      }
+    },
     uglify: {
       js: {
         files: {
@@ -27,9 +35,11 @@ module.exports = function(grunt) {
       }
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-wrap');
 
-  grunt.registerTask('default', ['uglify', 'watch', 'wrap']);
+  grunt.registerTask('default', ['uglify', 'wrap', 'connect', 'watch']);
 }
