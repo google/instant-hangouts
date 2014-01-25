@@ -43,11 +43,11 @@ describe('instanthangouts integration', function() {
     }
   });
 
-  it('inserts plusone.js script tag at most once', function() {
+  it('allows plusone.js script tag to be re-inserted', function() {
     expect(__html__['index.html']).not.toContain('plusone.js');
     expect(getGapiScripts().length).toBe(1);
-    main();  // Force a second call to cause errant insertions, if any.
-    expect(getGapiScripts().length).toBe(1);
+    main();  // Force a second call to cause second insertion.
+    expect(getGapiScripts().length).toBe(2);
   });
 
   it('reads custom global attributes from first parent', function() {

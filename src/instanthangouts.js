@@ -204,13 +204,12 @@ function getRoomId() {
 }
 
 function insertGapiScript(attrs, callback) {
-  // Insert iff none are already present.
+  // Insert even if already present, to force callback.
   var gapiScripts = getGapiScripts();
 
   if (gapiScripts.length >= 1) {
     log(GAPI_URL +
         ' script already loaded; did you accidentally include it twice?');
-    return;
   }
 
   var script = document.createElement('script');
@@ -248,6 +247,10 @@ function log(message) {
 function main() {
   // Extracted for tests.
   var parents = document.getElementsByClassName(PARENT_CLASS_NAME);
+  if (parents.length == 0) {
+    log('No div elements of class ' + PARENT_CLASS_NAME + ' found');
+    return;
+  }
   var globals = getGlobalAttributes(parents);
   populateDom(globals, makeRenderFunction(parents));
 }
@@ -273,8 +276,8 @@ function makeRenderFunction(parents) {
 function populateDom(globals, callback) {
   var parents = document.getElementsByClassName(PARENT_CLASS_NAME);
   configureGlobals(globals);
-  insertGapiScript(globals, callback);
   insertRenderTargets(parents);
+  insertGapiScript(globals, callback);
 }
 
 addOnLoadHook(main);  // For browser execution.

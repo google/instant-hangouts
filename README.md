@@ -178,7 +178,8 @@ which comes with npm, in whatever way is best on your system.
 Pull down the repo and install dependencies into `./node_modules` with
 
 ```sh
-$ git pull <repo>
+$ git clone https://github.com/google/instant-hangouts.git
+$ cd instant-hangouts
 $ npm install
 ```
 
