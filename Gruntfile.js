@@ -2,6 +2,7 @@
 // has its own watcher).
 
 module.exports = function(grunt) {
+  require('load-grunt-tasks')(grunt);
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
@@ -27,9 +28,6 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-wrap');
 
   grunt.registerTask('default', ['wrap', 'uglify', 'watch']);
 }
