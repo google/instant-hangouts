@@ -1,5 +1,7 @@
 # Instant Hangouts
 
+**Disclaimer: due to Hangouts API changes, this app is no longer supported.**
+
 Instant Hangouts lets you easily add Google+ Hangouts to any web page:
 
 ```html
