@@ -237,4 +237,4 @@ $ karma start
 This will bring up a Chrome window and attach Karma to it. Your test code will
 be run in that Chrome window. Karma has its own file watcher and reruns tests
 when either the source, tests, or `index.html` changes. We use
-[Jasmine](http://pivotal.github.io/jasmine/) for our test framework.
+[Jasmine](http://jasmine.github.io/) for our test framework.
